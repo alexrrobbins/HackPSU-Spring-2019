@@ -1,38 +1,11 @@
 class Morse():
 
     import time
-    letters = {
-    ["dot", "dash"] : "a",
-    ["dash", "dot", "dot", "dot"] : "b",
-    ["dash", "dot", "dash", "dot"] : "c",
-    ["dash", "dot", "dot"] : "d",
-    ["dot"] : "e",
-    ["dot", "dot", "dash", "dot"] : "f",
-    ["dash", "dash", "dot"] : "g",
-    ["dot", "dot", "dot", "dot"] : "h",
-    ["dot", "dot"] : "i",
-    ["dot", "dash", "dash", "dash"] : "j",
-    ["dash", "dot", "dash"] : "k",
-    ["dot", "dash", "dot", "dot"] : "l",
-    ["dash", "dash"] : "m",
-    ["dash", "dot"] : "n",
-    ["dash", "dash", "dash"] : "o",
-    ["dot", "dash", "dash", "dot"] : "p",
-    ["dash", "dash", "dot", "dash"] : "q",
-    ["dot", "dash", "dot"] : "r",
-    ["dot", "dot", "dot"] : "s",
-    ["dash"] : "t",
-    ["dot", "dot", "dash"] : "u",
-    ["dot", "dot", "dot", "dash"] : "v",
-    ["dot", "dash", "dash"] : "w",
-    ["dash", "dot", "dot", "dash"] : "x",
-    ["dash", "dot", "dash", "dash"] : "y",
-    ["dash", "dash", "dot", "dot"] : "z"
-    }
 
     def __int__(self):
-        input = []
-        result = []
+        self.input = []
+        self.result = []
+
 
     def get_input(self, pin_input):
         time_units = 0
@@ -61,14 +34,46 @@ class Morse():
         temp_letter = []
         temp_word = []
         word_index = 0
+        letters = {
+        ("dot", "dash") : "a",
+        ("dash", "dot", "dot", "dot") : "b",
+        ("dash", "dot", "dash", "dot") : "c",
+        ("dash", "dot", "dot") : "d",
+        ("dot") : "e",
+        ("dot", "dot", "dash", "dot") : "f",
+        ("dash", "dash", "dot") : "g",
+        ("dot", "dot", "dot", "dot") : "h",
+        ("dot", "dot") : "i",
+        ("dot", "dash", "dash", "dash") : "j",
+        ("dash", "dot", "dash") : "k",
+        ("dot", "dash", "dot", "dot") : "l",
+        ("dash", "dash") : "m",
+        ("dash", "dot") : "n",
+        ("dash", "dash", "dash") : "o",
+        ("dot", "dash", "dash", "dot") : "p",
+        ("dash", "dash", "dot", "dash") : "q",
+        ("dot", "dash", "dot") : "r",
+        ("dot", "dot", "dot") : "s",
+        ("dash") : "t",
+        ("dot", "dot", "dash") : "u",
+        ("dot", "dot", "dot", "dash") : "v",
+        ("dot", "dash", "dash") : "w",
+        ("dash", "dot", "dot", "dash") : "x",
+        ("dash", "dot", "dash", "dash") : "y",
+        ("dash", "dash", "dot", "dot") : "z"
+        }
 
-        while not len(input) == 0:
-            while not self.input[0] = "eow":
+        while len(self.input) > 0:
+            while not self.input[0] == "eow":
                 while not self.input[0] == "eol":
-                    temp_letter.append(input.pop(0))
-                    temp_word[word_index] = letters[temp_letter]
-                    word_index += 1
-                word = temp_word.join(" ")
-                temp_word = []
-                word_index = 0
-                result.append( word )
+                    temp_letter.append(self.input.pop(0))
+                temp_letter_tuple = tuple(temp_letter)
+                print(temp_letter_tuple)
+                temp_word[word_index] = letters[temp_letter_tuple]
+                word_index += 1
+                self.input.pop(0)
+            word = temp_word.join(" ")
+            temp_word = []
+            word_index = 0
+            result.append( word )
+            self.input.pop(0)
