@@ -1,35 +1,37 @@
 class Morse():
 
     import time
-    a = ["dot", "dash"]
-    b = ["dash", "dot", "dot", "dot"]
-    c = ["dash", "dot", "dash", "dot"]
-    d = ["dash", "dot", "dot"]
-    e = ["dot"]
-    f = ["dot", "dot", "dash", "dot"]
-    g = ["dash", "dash", "dot"]
-    h = ["dot", "dot", "dot", "dot"]
-    i = ["dot", "dot"]
-    j = ["dot", "dash", "dash", "dash"]
-    k = ["dash", "dot", "dash"]
-    l = ["dot", "dash", "dot", "dot"]
-    m = ["dash", "dash"]
-    n = ["dash", "dot"]
-    o = ["dash", "dash", "dash"]
-    p = ["dot", "dash", "dash", "dot"]
-    q = ["dash", "dash", "dot", "dash"]
-    r = ["dot", "dash", "dot"]
-    s = ["dot", "dot", "dot"]
-    t = ["dash"]
-    u = ["dot", "dot", "dash"]
-    v = ["dot", "dot", "dot", "dash"]
-    w = ["dot", "dash", "dash"]
-    x = ["dash", "dot", "dot", "dash"]
-    y = ["dash", "dot", "dash", "dash"]
-    z = ["dash", "dash", "dot", "dot"]
+    letters = {a : ["dot", "dash"],
+    b : ["dash", "dot", "dot", "dot"],
+    c : ["dash", "dot", "dash", "dot"],
+    d : ["dash", "dot", "dot"],
+    e : ["dot"],
+    f : ["dot", "dot", "dash", "dot"],
+    g : ["dash", "dash", "dot"],
+    h : ["dot", "dot", "dot", "dot"],
+    i : ["dot", "dot"],
+    j : ["dot", "dash", "dash", "dash"],
+    k : ["dash", "dot", "dash"],
+    l : ["dot", "dash", "dot", "dot"],
+    m : ["dash", "dash"],
+    n : ["dash", "dot"],
+    o : ["dash", "dash", "dash"]
+    p : ["dot", "dash", "dash", "dot"]
+    q : ["dash", "dash", "dot", "dash"]
+    r : ["dot", "dash", "dot"]
+    s : ["dot", "dot", "dot"]
+    t : ["dash"]
+    u : ["dot", "dot", "dash"]
+    v : ["dot", "dot", "dot", "dash"]
+    w : ["dot", "dash", "dash"]
+    x : ["dash", "dot", "dot", "dash"]
+    y : ["dash", "dot", "dash", "dash"]
+    z : ["dash", "dash", "dot", "dot"]}
+
 
     def __int__(self):
         input = []
+        result = []
 
     def get_input(self, pin_input):
         time_units = 0
@@ -55,4 +57,5 @@ class Morse():
                 translate_input
 
     def translate_input(self):
-        pass
+        while not self.input == "eol":
+            while not self.input == "eow":
