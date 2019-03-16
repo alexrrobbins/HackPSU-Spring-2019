@@ -1,33 +1,34 @@
 class Morse():
 
     import time
-    letters = {a : ["dot", "dash"],
-    b : ["dash", "dot", "dot", "dot"],
-    c : ["dash", "dot", "dash", "dot"],
-    d : ["dash", "dot", "dot"],
-    e : ["dot"],
-    f : ["dot", "dot", "dash", "dot"],
-    g : ["dash", "dash", "dot"],
-    h : ["dot", "dot", "dot", "dot"],
-    i : ["dot", "dot"],
-    j : ["dot", "dash", "dash", "dash"],
-    k : ["dash", "dot", "dash"],
-    l : ["dot", "dash", "dot", "dot"],
-    m : ["dash", "dash"],
-    n : ["dash", "dot"],
-    o : ["dash", "dash", "dash"]
-    p : ["dot", "dash", "dash", "dot"]
-    q : ["dash", "dash", "dot", "dash"]
-    r : ["dot", "dash", "dot"]
-    s : ["dot", "dot", "dot"]
-    t : ["dash"]
-    u : ["dot", "dot", "dash"]
-    v : ["dot", "dot", "dot", "dash"]
-    w : ["dot", "dash", "dash"]
-    x : ["dash", "dot", "dot", "dash"]
-    y : ["dash", "dot", "dash", "dash"]
-    z : ["dash", "dash", "dot", "dot"]}
-
+    letters = {
+    ["dot", "dash"] : "a",
+    ["dash", "dot", "dot", "dot"] : "b",
+    ["dash", "dot", "dash", "dot"] : "c",
+    ["dash", "dot", "dot"] : "d",
+    ["dot"] : "e",
+    ["dot", "dot", "dash", "dot"] : "f",
+    ["dash", "dash", "dot"] : "g",
+    ["dot", "dot", "dot", "dot"] : "h",
+    ["dot", "dot"] : "i",
+    ["dot", "dash", "dash", "dash"] : "j",
+    ["dash", "dot", "dash"] : "k",
+    ["dot", "dash", "dot", "dot"] : "l",
+    ["dash", "dash"] : "m",
+    ["dash", "dot"] : "n",
+    ["dash", "dash", "dash"] : "o",
+    ["dot", "dash", "dash", "dot"] : "p",
+    ["dash", "dash", "dot", "dash"] : "q",
+    ["dot", "dash", "dot"] : "r",
+    ["dot", "dot", "dot"] : "s",
+    ["dash"] : "t",
+    ["dot", "dot", "dash"] : "u",
+    ["dot", "dot", "dot", "dash"] : "v",
+    ["dot", "dash", "dash"] : "w",
+    ["dash", "dot", "dot", "dash"] : "x",
+    ["dash", "dot", "dash", "dash"] : "y",
+    ["dash", "dash", "dot", "dot"] : "z"
+    }
 
     def __int__(self):
         input = []
@@ -57,5 +58,17 @@ class Morse():
                 translate_input
 
     def translate_input(self):
-        while not self.input == "eol":
-            while not self.input == "eow":
+        temp_letter = []
+        temp_word = []
+        word_index = 0
+
+        while not len(input) == 0:
+            while not self.input[0] = "eow":
+                while not self.input[0] == "eol":
+                    temp_letter.append(input.pop(0))
+                    temp_word[word_index] = letters[temp_letter]
+                    word_index += 1
+                word = temp_word.join(" ")
+                temp_word = []
+                word_index = 0
+                result.append( word )
