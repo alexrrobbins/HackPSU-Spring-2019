@@ -76,4 +76,11 @@ class Morse():
         return word
 
     def output_result(self):
-        return ' '.join(self.output)
+        import sys
+        if not sys.warnoptions:
+            import warnings
+            warnings.simplefilter("ignore")
+        import Language_Translate
+        english_text = ' '.join(self.output)
+        final_output = Language_Translate.translate_text(english_text)
+        return final_output
