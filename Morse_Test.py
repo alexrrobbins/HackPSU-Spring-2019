@@ -3,6 +3,7 @@ import unittest
 
 m = Morse()
 m.__init__()
-m.input = ["dot", "dot", "dash", "eol", "eow"]
+m.input = ["dot", "dash", "eol", "eow"]
 result = m.translate_input()
 print(result)
+m.add_word(result)

@@ -1,11 +1,9 @@
 class Morse():
-
     import time
 
-    def __int__(self):
-        self.input = []
-        self.result = []
-
+    def __int__(self,input=[],result=[]):
+        self.input = input
+        self.result = result
 
     def get_input(self, pin_input):
         time_units = 0
@@ -32,8 +30,7 @@ class Morse():
 
     def translate_input(self):
         temp_letter = []
-        temp_word = []
-        word_index = 0
+        temp_word = ['']
         letters = {
         ("dot", "dash") : "a",
         ("dash", "dot", "dot", "dot") : "b",
@@ -64,16 +61,16 @@ class Morse():
         }
 
         while len(self.input) > 0:
+            word_index = 0
             while not self.input[0] == "eow":
                 while not self.input[0] == "eol":
                     temp_letter.append(self.input.pop(0))
                 temp_letter_tuple = tuple(temp_letter)
-                print(temp_letter_tuple)
                 temp_word[word_index] = letters[temp_letter_tuple]
                 word_index += 1
                 self.input.pop(0)
-            word = temp_word.join(" ")
+            word = ' '.join(temp_word)
             temp_word = []
-            word_index = 0
-            result.append( word )
+            self.result.append(word)
             self.input.pop(0)
+        return word
