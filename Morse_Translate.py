@@ -1,9 +1,9 @@
 class Morse():
     import time
 
-    def __int__(self,input=[],result=[]):
+    def __int__(self,input=[],output=[]):
         self.input = input
-        self.result = result
+        self.output = result
 
     def get_input(self, pin_input):
         time_units = 0
@@ -71,6 +71,6 @@ class Morse():
                 self.input.pop(0)
             word = ' '.join(temp_word)
             temp_word = []
-            self.result.append(word)
+            self.output.append(word)
             self.input.pop(0)
         return word
