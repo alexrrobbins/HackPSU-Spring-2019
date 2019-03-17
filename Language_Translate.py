@@ -1,3 +1,6 @@
+#
+# This code functions as intended
+#
 def translate_text(text):
     from google.cloud import translate
     client = translate.Client()

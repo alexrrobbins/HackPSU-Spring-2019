@@ -1,4 +1,10 @@
-import RPi.GPIO as GPIO
+#
+#This code could not be tested without Pi, which was not reading correct voltage
+#
+
+
+#import RPi.GPIO as GPIO
+import GPIOSimulator as GPIO
 from Morse_Translate import Morse
 
 m = Morse()

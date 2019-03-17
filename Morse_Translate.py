@@ -1,3 +1,6 @@
+#
+#This code functions as intended
+#
 class Morse():
     import time
 
