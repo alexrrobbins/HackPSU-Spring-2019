@@ -5,29 +5,6 @@ class Morse():
         self.input = input
         self.output = result
 
-    def get_input(self, pin_input):
-        time_units = 0
-        while pin_input == 1:
-            start = time.time()
-            end = time.time()
-            time_units = end - start
-            if time_units == 1:
-                input.append( "dot" )
-            elif time_units == 3:
-                input.append( "dash" )
-        while pin_input == 0:
-            start = time.time()
-            end = time.time()
-            time_units = end - start
-            if time_units == 1:
-                break
-            elif time_units == 3:
-                input.append( "eol" )
-            elif time_units == 7:
-                input.append( "eow" )
-            elif time_units > 7:
-                translate_input
-
     def translate_input(self):
         temp_letter = []
         temp_word = []
@@ -84,3 +61,15 @@ class Morse():
         english_text = ' '.join(self.output)
         final_output = Language_Translate.translate_text(english_text)
         return final_output
+
+    def get_letter_input(self, time_units):
+        if time_units == 1:
+            input.append( "dot" )
+        elif time_units == 3:
+            input.append( "dash" )
+
+    def get_space_input(self, time_units):
+        if time_units == 3:
+            input.append( "eol" )
+        elif time_units == 7:
+            input.append( "eow" )
