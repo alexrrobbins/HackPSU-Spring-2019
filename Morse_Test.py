@@ -1,4 +1,5 @@
 from Morse_Translate import Morse
+import Language_Translate as lang
 import unittest
 
 class Morse_Test(unittest.TestCase):
@@ -29,6 +30,11 @@ class Morse_Test(unittest.TestCase):
         result1 = m.translate_input()
         result2 = m.output_result()
         self.assertEqual(result2,'alex alex alex')
+
+    def test_language_translation(self):
+        print("Please type 'en' and hit enter when prompted.")
+        result = lang.translate_text("Hola")
+        self.assertEqual(result,"Hello")
 
 if __name__ == '__main__':
     unittest.main()
