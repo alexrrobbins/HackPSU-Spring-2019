@@ -10,5 +10,25 @@ class Morse_Test(unittest.TestCase):
         result = m.translate_input()
         self.assertEqual(result,'a')
 
+    def test_one_word(self):
+        m = Morse()
+        m.__init__()
+        m.input = ["dot", "dash", "eol", "dot", "dash", "dot", "dot", "eol", "dot", "eol", "dash", "dot", "dot", "dash", "eol", "eow"]
+        m.output = []
+        result = m.translate_input()
+        self.assertEqual(result,'alex')
+
+    def test_sentence(self):
+        m = Morse()
+        m.__init__()
+        m.input = ["dot", "dash", "eol", "dot", "dash", "dot", "dot", "eol", "dot", "eol",
+            "dash", "dot", "dot", "dash", "eol", "eow", "dot", "dash", "eol", "dot", "dash", "dot", "dot", "eol", "dot", "eol",
+            "dash", "dot", "dot", "dash", "eol", "eow", "dot", "dash", "eol", "dot", "dash", "dot", "dot", "eol", "dot", "eol",
+            "dash", "dot", "dot", "dash", "eol", "eow"]
+        m.output = []
+        result1 = m.translate_input()
+        result2 = m.output_result()
+        self.assertEqual(result2,'alex alex alex')
+
 if __name__ == '__main__':
     unittest.main()

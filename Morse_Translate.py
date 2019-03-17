@@ -30,13 +30,13 @@ class Morse():
 
     def translate_input(self):
         temp_letter = []
-        temp_word = ['']
+        temp_word = []
         letters = {
         ("dot", "dash") : "a",
         ("dash", "dot", "dot", "dot") : "b",
         ("dash", "dot", "dash", "dot") : "c",
         ("dash", "dot", "dot") : "d",
-        ("dot") : "e",
+        ("dot",) : "e",
         ("dot", "dot", "dash", "dot") : "f",
         ("dash", "dash", "dot") : "g",
         ("dot", "dot", "dot", "dot") : "h",
@@ -61,16 +61,19 @@ class Morse():
         }
 
         while len(self.input) > 0:
-            word_index = 0
-            while not self.input[0] == "eow":
-                while not self.input[0] == "eol":
+            while not self.input[0] == "eow" and len(self.input) > 0:
+                if not self.input[0] == "eol":
                     temp_letter.append(self.input.pop(0))
-                temp_letter_tuple = tuple(temp_letter)
-                temp_word[word_index] = letters[temp_letter_tuple]
-                word_index += 1
-                self.input.pop(0)
-            word = ' '.join(temp_word)
+                else:
+                    temp_letter_tuple = tuple(temp_letter)
+                    temp_word.append(letters[temp_letter_tuple])
+                    self.input.pop(0)
+                    temp_letter = []
+            word = ''.join(temp_word)
             temp_word = []
             self.output.append(word)
             self.input.pop(0)
         return word
+
+    def output_result(self):
+        return ' '.join(self.output)
